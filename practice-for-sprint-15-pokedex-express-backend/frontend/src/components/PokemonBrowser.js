@@ -17,11 +17,14 @@ const PokemonBrowser = () => {
   });
   const [showForm, setShowForm] = useState(false);
 
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getPokemon())
+  }, [])
 
   if (!pokemon) {
     return null;
   }
-  
 
   return (
     <main>
